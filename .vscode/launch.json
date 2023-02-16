@@ -23,7 +23,7 @@
             "program": "${workspaceFolder}/ConsoleAppProject/bin/Debug/net6.0/ConsoleAppProject.dll",
             "args": [],
             "cwd": "${workspaceFolder}/ConsoleAppProject",
-            "console": "internalConsole",
+            "console": "integratedTerminal",
             "stopAtEntry": false
         },
         {
