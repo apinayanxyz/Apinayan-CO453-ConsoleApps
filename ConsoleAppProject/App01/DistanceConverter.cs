@@ -6,7 +6,7 @@ namespace ConsoleAppProject.App01
     /// A converter for diferent distances
     /// </summary>
     /// <author>
-    /// Apinayan Version 1.2
+    /// Apinayan Version 1.3
     /// </author>
     public class DistanceConverter
     {
@@ -76,7 +76,7 @@ namespace ConsoleAppProject.App01
         }
         public void ConvertValue()
         {
-            /*if (initialUnit == "Feet")
+            if (initialUnit == "Feet")
             {
                 ConvertFeet();
             }
@@ -87,34 +87,10 @@ namespace ConsoleAppProject.App01
             else if (initialUnit == "Meters")
             {
                 ConvertMeters();
-            }*/
-            if (initialUnit == "Feet" || convertedUnit == "Miles")
-            {
-                convertedValue = initialValue / MILEFEETCONST;
-            }
-            else if (initialUnit == "Feet" || convertedUnit == "Meters")
-            {
-                convertedValue = initialValue * FEETMETERCONST;
-            }
-            else if (initialUnit == "Miles" || convertedUnit == "Feet")
-            {
-                convertedValue = initialValue * MILEFEETCONST;
-            }
-            else if (initialUnit == "Miles" || convertedUnit == "Meters")
-            {
-                convertedValue = initialValue * MILEMETERCONST;
-            }
-            else if (initialUnit == "Meters" || convertedUnit == "Feet")
-            {
-                convertedValue = initialValue / FEETMETERCONST;
-            }
-            else if (initialUnit == "Meters" || convertedUnit == "Miles")
-            {
-                convertedValue = initialValue / MILEMETERCONST;
             }
             PrintConversion();
         }
-        /*public void ConvertFeet()
+        public void ConvertFeet()
         {
             if (convertedUnit == "Miles")
             {
@@ -146,7 +122,7 @@ namespace ConsoleAppProject.App01
             {
                 convertedValue = initialValue / MILEMETERCONST;
             }
-        }*/
+        }
         public void PrintConversion()
         {
             Console.WriteLine(initialUnit + " " + initialValue + " is " + convertedValue + " " + convertedUnit);
