@@ -6,7 +6,7 @@ namespace ConsoleAppProject.App01
     /// A converter for diferent distances
     /// </summary>
     /// <author>
-    /// Apinayan Version 1.1
+    /// Apinayan Version 1.2
     /// </author>
     public class DistanceConverter
     {
@@ -15,6 +15,8 @@ namespace ConsoleAppProject.App01
         string initialUnit;
         string convertedUnit;
         const double MILEFEETCONST = 5280;
+        const double MILEMETERCONST = 1609.35;
+        const double FEETMETERCONST = 0.3048;
         public void Run()
         {
             Console.WriteLine("Enter your value for miles");
@@ -25,67 +27,38 @@ namespace ConsoleAppProject.App01
         public void OpenConverterMenu()
         {
             Console.WriteLine("This is a Distance converter");
-            OpenInitialUnitMenu();
-            OpenConvertedUnitMenu();
+            Console.WriteLine("Please select which Unit you would like to convert from");
+            ShowMenuOptions();
+            initialUnit = getValue();
+            ShowMenuOptions();
+            convertedUnit = getValue();
             InputValue();
 
         }
-        public void OpenInitialUnitMenu()
+        public void ShowMenuOptions()
         {
-            Console.WriteLine("Please select which Unit you would like to convert from");
             Console.WriteLine("1. Feet");
             Console.WriteLine("2. Miles");
             Console.WriteLine("3. Meters");
-            ChooseInitialValue();
         }
-        public void OpenConvertedUnitMenu()
-        {
-            Console.WriteLine("Please select which Unit you would like to convert to");
-            Console.WriteLine("1. Feet");
-            Console.WriteLine("2. Miles");
-            Console.WriteLine("3. Meters");
-            ChooseConvertedValue();
-        }
-        public void ChooseInitialValue()
+        public string getValue()
         {
             string option = Console.ReadLine();
             if (option == "1")
             {
-                initialUnit = "Feet";
+                return "Feet";
             }
             else if (option == "2")
             {
-                initialUnit = "Miles";
+                return "Miles";
             }
             else if (option == "3")
             {
-                initialUnit = "Meters";
+                return "Meters";
             }
             else
             {
-                Console.WriteLine("Error");
-                OpenConverterMenu();
-            }
-        }
-        public void ChooseConvertedValue()
-        {
-            string option = Console.ReadLine();
-            if (option == "1")
-            {
-                convertedUnit = "Feet";
-            }
-            else if (option == "2")
-            {
-                convertedUnit = "Miles";
-            }
-            else if (option == "3")
-            {
-                convertedUnit = "Meters";
-            }
-            else
-            {
-                Console.WriteLine("Error");
-                OpenConverterMenu();
+                return ("Error");
             }
         }
         public int InputValue()
@@ -117,7 +90,9 @@ namespace ConsoleAppProject.App01
                 convertedValue = initialValue / MILEFEETCONST;
             }
             else if (convertedUnit == "Meters")
-            { }
+            { 
+                convertedValue = initialValue * FEETMETERCONST;
+            }
         }
         public void ConvertMiles()
         {
@@ -126,14 +101,20 @@ namespace ConsoleAppProject.App01
                 convertedValue = initialValue * MILEFEETCONST;
             }
             else if (convertedUnit == "Meters")
-            { }
+            {
+                convertedValue = initialValue * MILEMETERCONST;
+            }
         }
         public void ConvertMeters()
         {
             if (convertedUnit == "Feet")
-            { }
+            { 
+                convertedValue = initialValue / FEETMETERCONST;
+            }
             else if (convertedUnit == "Miles")
-            { }
+            {
+                convertedValue = initialValue / MILEMETERCONST;
+            }
         }
         public void PrintConversion()
         {
