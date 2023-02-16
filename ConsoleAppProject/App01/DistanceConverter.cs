@@ -30,8 +30,16 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("Please select which Unit you would like to convert from");
             ShowMenuOptions();
             initialUnit = getValue();
+            if (initialUnit == "error")
+            {
+                OpenConverterMenu();
+            }
             ShowMenuOptions();
             convertedUnit = getValue();
+            if (convertedUnit == "error")
+            {
+                OpenConverterMenu();
+            }
             InputValue();
 
         }
@@ -68,7 +76,7 @@ namespace ConsoleAppProject.App01
         }
         public void ConvertValue()
         {
-            if (initialUnit == "Feet")
+            /*if (initialUnit == "Feet")
             {
                 ConvertFeet();
             }
@@ -79,18 +87,41 @@ namespace ConsoleAppProject.App01
             else if (initialUnit == "Meters")
             {
                 ConvertMeters();
+            }*/
+            if (initialUnit == "Feet" || convertedUnit == "Miles")
+            {
+                convertedValue = initialValue / MILEFEETCONST;
             }
-
+            else if (initialUnit == "Feet" || convertedUnit == "Meters")
+            {
+                convertedValue = initialValue * FEETMETERCONST;
+            }
+            else if (initialUnit == "Miles" || convertedUnit == "Feet")
+            {
+                convertedValue = initialValue * MILEFEETCONST;
+            }
+            else if (initialUnit == "Miles" || convertedUnit == "Meters")
+            {
+                convertedValue = initialValue * MILEMETERCONST;
+            }
+            else if (initialUnit == "Meters" || convertedUnit == "Feet")
+            {
+                convertedValue = initialValue / FEETMETERCONST;
+            }
+            else if (initialUnit == "Meters" || convertedUnit == "Miles")
+            {
+                convertedValue = initialValue / MILEMETERCONST;
+            }
             PrintConversion();
         }
-        public void ConvertFeet()
+        /*public void ConvertFeet()
         {
             if (convertedUnit == "Miles")
             {
                 convertedValue = initialValue / MILEFEETCONST;
             }
             else if (convertedUnit == "Meters")
-            { 
+            {
                 convertedValue = initialValue * FEETMETERCONST;
             }
         }
@@ -108,14 +139,14 @@ namespace ConsoleAppProject.App01
         public void ConvertMeters()
         {
             if (convertedUnit == "Feet")
-            { 
+            {
                 convertedValue = initialValue / FEETMETERCONST;
             }
             else if (convertedUnit == "Miles")
             {
                 convertedValue = initialValue / MILEMETERCONST;
             }
-        }
+        }*/
         public void PrintConversion()
         {
             Console.WriteLine(initialUnit + " " + initialValue + " is " + convertedValue + " " + convertedUnit);
