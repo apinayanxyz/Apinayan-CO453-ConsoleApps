@@ -6,7 +6,7 @@ namespace ConsoleAppProject.App01
     /// A converter for diferent distances
     /// </summary>
     /// <author>
-    /// Apinayan Version 1.3
+    /// Apinayan Version 1.4
     /// </author>
     public class DistanceConverter
     {
@@ -28,6 +28,7 @@ namespace ConsoleAppProject.App01
         {
             Console.WriteLine("This is a Distance converter");
             Console.WriteLine("Please select which Unit you would like to convert from");
+            Console.WriteLine("");
             ShowMenuOptions();
             initialUnit = getValue();
             if (initialUnit == "error")
@@ -36,6 +37,8 @@ namespace ConsoleAppProject.App01
             }
             ShowMenuOptions();
             convertedUnit = getValue();
+            Console.WriteLine("Please select which Unit you would like to convert to");
+            Console.WriteLine("");
             if (convertedUnit == "error")
             {
                 OpenConverterMenu();
