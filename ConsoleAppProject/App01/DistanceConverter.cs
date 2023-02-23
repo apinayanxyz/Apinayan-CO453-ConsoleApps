@@ -43,7 +43,7 @@ namespace ConsoleAppProject.App01
             {
                 OpenConverterMenu();
             }
-            InputValue();
+            initialValue =InputValue();
 
         }
         public void ShowMenuOptions()
@@ -72,7 +72,7 @@ namespace ConsoleAppProject.App01
                 return ("Error");
             }
         }
-        public int InputValue()
+        public double InputValue()
         {
             Console.WriteLine("Enter your value for " + initialUnit);
             return Convert.ToInt32(Console.ReadLine());
