@@ -8,9 +8,5 @@
     /// </author>
     public class BMI
     {
-        public void Run()
-        {
-            
-        }
     }
 }
