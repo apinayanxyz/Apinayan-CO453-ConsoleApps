@@ -27,7 +27,8 @@ namespace ConsoleAppProject.App03
         {
             for (int i = 0; i < StudentGrades.length; i++)
             {
-                String StudentGrade[i,0] = Convert.ToInt32(UserInput[]); 
+                String StudentGrade[i,0] = Convert.ToInt32(UserInput("Name"));
+                String StudentGrade[i,1] = Convert.ToInt32(UserInput("Mark"));
             }
         }
 
