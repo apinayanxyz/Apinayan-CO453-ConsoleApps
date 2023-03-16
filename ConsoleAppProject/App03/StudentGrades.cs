@@ -25,12 +25,15 @@ namespace ConsoleAppProject.App03
 
         public void GetMarksByInput()
         {
-
+            for (int i = 0; i < StudentGrades.length; i++)
+            {
+                String StudentGrade[i,0] = Convert.ToInt32(UserInput[]); 
+            }
         }
 
-        public String UserInput()
+        public String UserInput(String prompt)
         {
-            Console.WriteLine("Enter your value for " + initialUnit);
+            Console.WriteLine(prompt + " > ");
             return Console.ReadLine();
         }
 
