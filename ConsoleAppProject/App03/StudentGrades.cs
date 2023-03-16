@@ -12,5 +12,51 @@ namespace ConsoleAppProject.App03
     public class StudentGrades
     {
 
+        String[,] StudentGrades = new int[10,3];
+
+        public void run()
+        {
+            FindGrades();
+            PrintGrade();
+            CalculateMedian();
+            FindValue("max");
+            FindValue("min");
+        }   
+
+        public void GetMarksByInput()
+        {
+
+        }
+
+        public String UserInput()
+        {
+            Console.WriteLine("Enter your value for " + initialUnit);
+            return Console.ReadLine();
+        }
+
+        public FindGrades()
+        {
+
+        }
+
+        public int CalculateMedian()
+        {
+
+        }
+
+        public int FindValue(String option)
+        {
+
+        }
+
+        public boolean FindIf(String option)
+        {
+
+        }
+
+        public void PrintGrade()
+        {
+
+        }
     }
 }
