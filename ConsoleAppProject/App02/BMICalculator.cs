@@ -1,3 +1,5 @@
+using System;
+
 namespace ConsoleAppProject.App02
 {
     /// <summary>
@@ -11,12 +13,18 @@ namespace ConsoleAppProject.App02
         double heightValue;
         double weightValue;
         string heightUnit;
-        double weightUnit;
+        string weightUnit;
         double BMIValue;
-
+        const double FeetPoundConst=703;
         public void Run()
-        {
-            
+        {   
+            Console.WriteLine("This is a BMI Calculator");
+            ShowMenuOptions();
+            GetValue();
+            heightValue = InputValue(heightUnit);
+            weightValue = InputValue(weightUnit);
+            CalculateBMI();
+            PrintValue();
         }
 
         //
@@ -24,6 +32,7 @@ namespace ConsoleAppProject.App02
         //
         public void ShowMenuOptions()
         {
+            Console.WriteLine("Please select which values you would like to use");
             Console.WriteLine("1. Cm and Kg");
             Console.WriteLine("2. Feet and pounds");
         }
@@ -45,8 +54,9 @@ namespace ConsoleAppProject.App02
                 weightUnit = "Pounds";
             }
             else
-            {
-                return ("Error");
+            {   
+                Console.WriteLine("Please enter a valid value");
+                GetValue();
             }
         
         }
@@ -56,8 +66,26 @@ namespace ConsoleAppProject.App02
         //
         public double InputValue(string givenUnit)
         {
-            Console.WriteLine("Enter your value for " + gievnUnit);
+            Console.WriteLine("Enter your value for " + givenUnit);
             return Convert.ToInt32(Console.ReadLine());
+        }
+
+        public void CalculateBMI()
+        {
+            if(heightUnit == "Feet" || weightUnit == "Pounds")
+            {
+                BMIValue=(weightValue / (heightValue * heightValue) ) * FeetPoundConst;
+            }
+            else 
+            {
+                BMIValue=(weightValue / (heightValue * heightValue) );
+            }
+        }
+
+        public void PrintValue()
+        {
+            Console.WriteLine("From " +  heightValue + " " + heightUnit + " and "+  weightValue + " " + weightUnit);
+            Console.WriteLine("Your BMI Score is " + BMIValue);
         }
     }
 }
