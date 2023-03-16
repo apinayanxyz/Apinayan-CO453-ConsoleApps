@@ -50,6 +50,7 @@ namespace ConsoleAppProject.App03
             {
                 total=Convert.ToInt32(StudentGrades[i,1]);
             }
+            
             return total / StudentGrades.length;
         }
 
