@@ -27,8 +27,8 @@ namespace ConsoleAppProject.App03
         {
             for (int i = 0; i < StudentGrades.length; i++)
             {
-                String StudentGrade[i,0] = Convert.ToInt32(UserInput("Name"));
-                String StudentGrade[i,1] = Convert.ToInt32(UserInput("Mark"));
+                String StudentGrade[i,0] = UserInput("Name");
+                String StudentGrade[i,1] = UserInput("Mark");
             }
         }
 
@@ -44,8 +44,13 @@ namespace ConsoleAppProject.App03
         }
 
         public int CalculateMedian()
-        {
-
+        {   
+            int total=0;
+            for (int i = 0; i < StudentGrades.length; i++)
+            {
+                total=Convert.ToInt32(StudentGrades[i,1]);
+            }
+            return total / StudentGrades.length;
         }
 
         public int FindValue(String option)
