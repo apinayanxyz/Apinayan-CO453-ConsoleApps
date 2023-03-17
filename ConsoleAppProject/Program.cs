@@ -1,4 +1,5 @@
-﻿using ConsoleAppProject.App01;
+﻿using System.IO.Enumeration;
+using ConsoleAppProject.App01;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.Helpers;
 using System;
@@ -26,8 +27,10 @@ namespace ConsoleAppProject
             Console.WriteLine(" =================================================");
             Console.WriteLine();
 
-            DistanceConverter converter = new DistanceConverter();
-            converter.Run();
+            //DistanceConverter converter = new DistanceConverter();
+            //converter.Run();
+            StudentGrades finder = new StudentGrades();
+            finder.run();
         }
     }
 }
