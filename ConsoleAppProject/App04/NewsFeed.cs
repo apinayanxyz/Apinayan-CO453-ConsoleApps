@@ -29,14 +29,14 @@ namespace ConsoleAppProject.App04
 
         public void run()
         {
-
+            DisplayMenu();
         }
 
         public void DisplayMenu()
         {
             bool quit = false;
 
-            //UserLib.OutputHeading("News Feed");
+            OutputHeading("News Feed");
 
             string[] choices = new string[]
             {
