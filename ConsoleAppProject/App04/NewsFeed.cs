@@ -131,7 +131,7 @@ namespace ConsoleAppProject.App04
             foreach (Post post in Posts)
             {   
                 int i = Posts.IndexOf(post);
-                Console.WriteLine("Post id >" + (i + 1) + "  > ");
+                Console.WriteLine("Post id >" + (i) + "  > ");
                 post.Display();
                 Console.WriteLine();
             }
@@ -148,7 +148,7 @@ namespace ConsoleAppProject.App04
             {
                 if (post.Username == author) {
                     int i = Posts.IndexOf(post);
-                    Console.WriteLine("Post id >" + (i + 1) + "  > ");
+                    Console.WriteLine("Post id >" + (i) + "  > ");
                     post.Display();
                     Console.WriteLine();
                 }
@@ -161,10 +161,10 @@ namespace ConsoleAppProject.App04
         {
             foreach (Post post in Posts)
             {
-                if (post.likes > 0)
+                if (post.Likes > 0)
                 {
                     int i = Posts.IndexOf(post);
-                    Console.WriteLine("Post id >" + (i + 1) + "  > ");
+                    Console.WriteLine("Post id >" + (i) + "  > ");
                     post.Display();
                     Console.WriteLine();
                 }

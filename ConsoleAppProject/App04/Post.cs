@@ -1,6 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
+///<summary>
+/// This class stores information about a post in a social network. 
+/// Template used to create text and image posts
+/// Contains the time elapsed from a post being made, likes the post has and it's author
+///</summary>
+/// <author>
+/// Apinayan Kanenthirarasa
+/// </author>
 public class Post
 {
 
@@ -9,9 +18,9 @@ public class Post
 
     public DateTime Timestamp { get; }
 
-    public int likes { get; }
+    public int Likes { get; set; }
 
-    private readonly List<String> comments;
+    private List<String> comments;
     /// <summary>
     /// Record one more 'Like' indication from a user.
     /// </summary>
@@ -21,13 +30,16 @@ public class Post
         Username = author;
         Timestamp = DateTime.Now;
 
-        likes = 0;
+        Likes = 0;
         comments = new List<String>();
     }
 
+    ///<summary>
+    /// Record that a user has added his/her 'Like' vote.
+    ///</summary>
     public void Like()
     {
-        likes++;
+        Likes++;
     }
 
     ///<summary>
@@ -35,9 +47,9 @@ public class Post
     ///</summary>
     public void Unlike()
     {
-        if (likes > 0)
+        if (Likes > 0)
         {
-            likes--;
+            Likes--;
         }
     }
 
@@ -52,6 +64,11 @@ public class Post
         comments.Add(text);
     }
 
+
+    ///<summary>
+    /// Displays All information from the post
+    /// 
+    /// </summary>
     public virtual void Display()
 
     {
@@ -60,9 +77,9 @@ public class Post
         Console.WriteLine($"    Time Elpased: {FormatElapsedTime(Timestamp)}");
         Console.WriteLine();
 
-        if (likes > 0)
+        if (Likes > 0)
         {
-            Console.WriteLine($"    Likes:  {likes}  people like this.");
+            Console.WriteLine($"    Likes:  {Likes}  people like this.");
         }
         else
         {
