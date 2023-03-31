@@ -1,77 +1,85 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using static ConsoleAppProject.Helpers.ConsoleHelper;
 
 namespace ConsoleAppProject.App04
 {
     ///<summary>
-    /// The NewsFeed class stores news posts for the news feed in a social network 
+    /// The NewsFeed class stores news Posts for the news feed in a social network 
     /// application.
     /// 
-    /// Display of the posts is currently simulated by printing the details to the
-    /// terminal. (Later, this should display in a browser.)
-    /// 
-    /// This version does not save the data to disk, and it does not provide any
-    /// search or ordering functions.
+    /// Display of the Posts is currently simulated by printing the details to the
+    /// terminal
     ///</summary>
     ///<author>
-    ///  Michael Kölling and David J. Barnes
-    ///  version 0.1
+    ///  Apinayan Kanenthirarasa
     ///</author> 
     public class NewsFeed
     {
-        private readonly List<MessagePost> messages;
-        private readonly List<PhotoPost> photos;
+        private List<Post> Posts { get; }
 
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
         public NewsFeed()
         {
-            messages = new List<MessagePost>();
-            photos = new List<PhotoPost>();
+            Posts = new List<Post>();
+            run();
         }
 
-
-        ///<summary>
-        /// Add a text post to the news feed.
-        /// 
-        /// @param text  The text post to be added.
-        ///</summary>
-        public void AddMessagePost(MessagePost message)
+        public void run()
         {
-            messages.Add(message);
+
         }
 
-        ///<summary>
-        /// Add a photo post to the news feed.
-        /// 
-        /// @param photo  The photo post to be added.
-        ///</summary>
-        public void AddPhotoPost(PhotoPost photo)
+        public void DisplayMenu()
         {
-            photos.Add(photo);
+            bool quit = false;
+
+            //UserLib.OutputHeading("News Feed");
+
+            string[] choices = new string[]
+            {
+                "Add Message post", "Add Photo", "Like Post" , "Display All" , "Display From Author" , "Quit"
+            };
+
+        }
+
+        public void UserChoiceInput()
+        {
+
+        }
+
+        public void ChooseOption()
+        {
+
+        }
+
+        /*public Post GetPost()
+        {
+            Post post;
+            return post;
+        }*/
+
+        ///<summary>
+        /// Add a post to the news feed.
+        ///</summary>
+        public void AddPost(Post post)
+        {
+            Posts.Add(post);
         }
 
         ///<summary>
-        /// Show the news feed. Currently: print the news feed details to the
-        /// terminal. (To do: replace this later with display in web browser.)
+        /// Show the news feed.
         ///</summary>
         public void Display()
         {
-            // display all text posts
-            foreach (MessagePost message in messages)
+            foreach (Post post in Posts)
             {
-                message.Display();
-                Console.WriteLine();   // empty line between posts
+                post.Display();
+                Console.WriteLine();
             }
 
-            // display all photos
-            foreach (PhotoPost photo in photos)
-            {
-                photo.Display();
-                Console.WriteLine();   // empty line between posts
-            }
         }
     }
 
