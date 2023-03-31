@@ -9,7 +9,7 @@ public class Post
 
     public DateTime Timestamp { get; }
 
-    private int likes;
+    public int likes { get; }
 
     private readonly List<String> comments;
     /// <summary>

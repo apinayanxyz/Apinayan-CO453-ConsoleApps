@@ -33,6 +33,7 @@ namespace ConsoleAppProject
             //StudentGrades finder = new StudentGrades();
             //finder.run();
             NewsFeed newsfeed = new NewsFeed();
+            newsfeed.run();
         }
     }
 }
